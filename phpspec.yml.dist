@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: PhpMob\Omise
+        psr4_prefix: PhpMob\Omise
+        src_path: ./src

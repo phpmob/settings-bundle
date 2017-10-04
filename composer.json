@@ -1,0 +1,53 @@
+{
+    "name": "phpmob/settings-bundle",
+    "description": "Just a settings library.",
+    "type": "symfony-bundle",
+    "keywords": [
+        "php",
+        "settings",
+        "settings-bundle"
+    ],
+    "homepage": "https://github.com/phpmob/settings-bundle",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ishmael Doss",
+            "email": "nukboon@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PhpMob\\SettingsBundle\\": "src"
+        },
+        "classmap": []
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "phpmob/settings": "^1.0",
+        "symfony/form": "^3.3",
+        "symfony/validator": "^3.3"
+    },
+    "require-dev": {
+        "cache/filesystem-adapter": "^1.0",
+        "phpspec/phpspec": "^4.0",
+        "phpunit/phpunit": "^5.6",
+        "sylius-labs/coding-standard": "^1.0"
+    },
+    "config": {
+        "sort-packages": true,
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "suggest": {
+        "cache/filesystem-adapter": "To use built-in \\PhpMob\\Settings\\Manager\\CachedManager."
+    }
+}

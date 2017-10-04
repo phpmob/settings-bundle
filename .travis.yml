@@ -1,0 +1,58 @@
+language: php
+
+php:
+  - '7.1'
+  - nightly
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - PHPSPECT_BIN='bin/phpspec'
+    - PHPSPECT_FLAGS='-fpretty'
+    - PHPUNIT_BIN='bin/phpunit'
+    - PHPUNIT_CONFIG='phpunit.xml.dist'
+    - PHPUNIT_FLAGS='--stop-on-failure --verbose'
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.bin/
+
+services: ~
+
+matrix:
+  fast_finish: true
+  include:
+    - php: '7.1'
+      env:
+        - COVERAGE="true"
+        - PHPUNIT_FLAGS="--stop-on-failure --verbose --coverage-text --coverage-clover=coverage.xml"
+  allow_failures:
+    - php: nightly
+    - php: '7.2'
+
+before_install:
+  - set -eo pipefail
+  - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - phpenv config-rm xdebug.ini || true
+  - |
+    if [ -n "$COVERAGE" ]; then
+      PHPUNIT_FLAGS="$PHPUNIT_FLAGS --testdox --coverage-text"
+      PHPUNIT_BIN="phpdbg -qrr $PHPUNIT_BIN"
+    else
+      PHPUNIT_BIN="php -d zend.enable_gc=0
+       $PHPUNIT_BIN"
+    fi
+
+install:
+  - composer update --prefer-dist $COMPOSER_FLAGS
+
+script:
+ - $PHPSPECT_BIN run $PHPSPECT_FLAGS
+ - $PHPUNIT_BIN -c $PHPUNIT_CONFIG $PHPUNIT_FLAGS
+
+notifications:
+  email: false
