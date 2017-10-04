@@ -36,7 +36,7 @@ doctrine:
                 type: xml
                 is_bundle: false
                 prefix: PhpMob\Settings\Model
-                dir: '%kernel.project_dir%/src/PhpMob/SettingsBundle/Resources/config/doctrine/model'
+                dir: '%kernel.project_dir%/vendor/phpmob/settings-bundle/src/Resources/config/doctrine/model'
 
 
 phpmob_settings:
@@ -95,7 +95,7 @@ your_route_name:
         _template: @yourtemplate # default @PhpMobSetting/default.html.twig
         _flash: ~ # flash message after update
         _redirect: ~ # redirect after update
-    
+
 ```
 
 ## using in twig
