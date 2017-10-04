@@ -1,6 +1,6 @@
 {
     "name": "phpmob/settings-bundle",
-    "description": "Just a settings library.",
+    "description": "Just a Symfony settings bundle.",
     "type": "symfony-bundle",
     "keywords": [
         "php",
