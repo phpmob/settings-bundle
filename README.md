@@ -112,7 +112,7 @@ Setter setting
 ```
 
 ## Sample Admin Screen
-[![screen](setting-screen.png)]
+![screen](setting-screen.png)
 
 ## Contributing
 Would like to help us and build the developer-friendly php code? Just follow our [Coding Standards](#coding-standards) and test your code — see [tests](tests),  [spec](spec).
@@ -126,7 +126,7 @@ When contributing code to PhpMob, you must follow its coding standards.
 PhpMob follows the standards defined in the [PSR-0](http://www.php-fig.org/psr/psr-0/), [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/) documents.
 
 ```bash
-$ ./bin/ecs check Manager Model Provider Schema Type --fix
+$ ./bin/ecs check src --fix
 ```
 ## Tests
 ```bash
