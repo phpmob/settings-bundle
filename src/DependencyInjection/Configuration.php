@@ -56,7 +56,7 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode('enabled')->defaultTrue()->end()
                                         ->scalarNode('type')->defaultValue('default')->end()
-                                        ->scalarNode('value')->defaultNull()->end()
+                                        ->variableNode('value')->defaultNull()->end()
                                         ->scalarNode('label')->defaultNull()->end()
                                         ->arrayNode('blueprint')
                                             ->addDefaultsIfNotSet()

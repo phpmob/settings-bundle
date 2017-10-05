@@ -152,7 +152,7 @@ class UpdateController extends Controller
             return $translated;
         }
 
-        return ucwords(preg_replace('/phpmob|\.|_/', '', $message));
+        return ucwords(trim(preg_replace('/phpmob|\.|_/', ' ', $message)));
     }
 
     /**
