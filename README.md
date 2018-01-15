@@ -111,6 +111,45 @@ your_route_name:
 
 ```
 
+## Custom form type to display `description` setting in form view.
+
+```php
+<?php
+
+namespace YourBundle\Form\Type;
+
+use PhpMob\SettingsBundle\Form\Type\AbstractBlueprintType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+class YourSettingType extends AbstractBlueprintType
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function getParentType(): string
+    {
+        return CheckboxType::class;
+    }
+}
+```
+
+And in setting configuration.
+
+```yaml
+phpmob_settings:
+    schemas:
+        section1:
+            owner_aware: true
+            label: Section1
+            settings:
+                key1:
+                    type: boolean
+                    label: 'Key 1'
+                    value: true
+                    blueprint:
+                        type: YourBundle\Form\Type\YourSettingType
+```
+
 ## using in twig
 Getter setting
 ```twig

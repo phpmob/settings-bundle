@@ -7,7 +7,7 @@ build:
     tests:
         override:
             -
-                command: './bin/phpspec run -fpretty && ./bin/phpunit --coverage-clover=coverage.clover'
+                command: './bin/phpunit --coverage-clover=coverage.clover'
                 coverage:
                     file: 'coverage.clover'
                     format: 'clover'

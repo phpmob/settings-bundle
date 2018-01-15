@@ -49,7 +49,13 @@ class SectionUpdateType extends AbstractType
                 $blueprintOptions['constraints'][] = new $class($constraintOptions);
             }
 
-            $builder->add($setting->getKey(), $blueprint->getType(), array_merge([
+            $type = $blueprint->getType();
+
+            if (get_parent_class($type) === AbstractBlueprintType::class) {
+                $blueprintOptions['description'] = $setting->getDescription();
+            }
+
+            $builder->add($setting->getKey(), $type, array_merge([
                 'label' => $setting->getLabel(),
                 'required' => false,
             ], $blueprintOptions));

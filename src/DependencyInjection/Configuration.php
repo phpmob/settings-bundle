@@ -45,7 +45,7 @@ class Configuration implements ConfigurationInterface
                         ->children()
                             ->scalarNode('enabled')->defaultTrue()->end()
                             ->scalarNode('owner_aware')->defaultFalse()->end()
-                            ->scalarNode('label')->defaultNull()->end()
+                            ->scalarNode('label')->isRequired()->end()
                             ->scalarNode('description')->defaultNull()->end()
                             ->arrayNode('settings')
                                 // setting key
@@ -58,7 +58,7 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode('enabled')->defaultTrue()->end()
                                         ->scalarNode('type')->defaultValue('default')->end()
                                         ->variableNode('value')->defaultNull()->end()
-                                        ->scalarNode('label')->defaultNull()->end()
+                                        ->scalarNode('label')->isRequired()->end()
                                         ->scalarNode('description')->defaultNull()->end()
                                         ->arrayNode('blueprint')
                                             ->addDefaultsIfNotSet()

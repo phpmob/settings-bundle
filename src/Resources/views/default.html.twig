@@ -26,11 +26,14 @@
         </div>
         <div class="col-9">
             <h2>{{ section.label|trans }}</h2>
-            <h6>{{ section.description|trans }}</h6>
+            {% if section.description %}
+                <h6>{{ section.description|trans }}</h6>
+            {% endif %}
             {{ form_start(form) }}
-            {{ form_errors(form) }}
-            {{ form_row(form, { label: false }) }}
-            <button type="submit">Update</button>
+                {{ form_errors(form) }}
+                {# need to custom form view to use form.XXX.vars['description'] #}
+                {{ form_row(form, { label: false }) }}
+                <button type="submit">Update</button>
             {{ form_end(form) }}
         </div>
     </div>
