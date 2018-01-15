@@ -29,6 +29,7 @@
             {% if section.description %}
                 <h6>{{ section.description|trans }}</h6>
             {% endif %}
+            <hr/>
             {{ form_start(form) }}
                 {{ form_errors(form) }}
                 {# need to custom form view to use form.XXX.vars['description'] #}
