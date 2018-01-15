@@ -29,7 +29,7 @@
     },
     "require": {
         "php": "^7.1",
-        "phpmob/settings": "^1.0",
+        "phpmob/settings": "^1.2",
         "symfony/form": "^3.3",
         "symfony/framework-bundle": "^3.3",
         "symfony/templating": "^3.3",
