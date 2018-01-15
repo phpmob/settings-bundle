@@ -46,6 +46,7 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('enabled')->defaultTrue()->end()
                             ->scalarNode('owner_aware')->defaultFalse()->end()
                             ->scalarNode('label')->defaultNull()->end()
+                            ->scalarNode('description')->defaultNull()->end()
                             ->arrayNode('settings')
                                 // setting key
                                 ->requiresAtLeastOneElement()
@@ -58,6 +59,7 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode('type')->defaultValue('default')->end()
                                         ->variableNode('value')->defaultNull()->end()
                                         ->scalarNode('label')->defaultNull()->end()
+                                        ->scalarNode('description')->defaultNull()->end()
                                         ->arrayNode('blueprint')
                                             ->addDefaultsIfNotSet()
                                             ->children()

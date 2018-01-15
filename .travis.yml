@@ -51,7 +51,6 @@ install:
   - composer update --prefer-dist $COMPOSER_FLAGS
 
 script:
- - $PHPSPECT_BIN run $PHPSPECT_FLAGS
  - $PHPUNIT_BIN -c $PHPUNIT_CONFIG $PHPUNIT_FLAGS
 
 notifications:

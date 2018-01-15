@@ -25,7 +25,8 @@
             </div>
         </div>
         <div class="col-9">
-            <h2>{{ form.vars.label|trans }}</h2>
+            <h2>{{ section.label|trans }}</h2>
+            <h6>{{ section.description|trans }}</h6>
             {{ form_start(form) }}
             {{ form_errors(form) }}
             {{ form_row(form, { label: false }) }}

@@ -119,7 +119,6 @@ class UpdateController extends Controller
 
         return $this->get('form.factory')->createNamed('', SectionUpdateType::class, $data, [
             'section' => $section,
-            'label' => $section->getLabel(),
         ]);
     }
 

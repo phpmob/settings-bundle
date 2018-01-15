@@ -85,6 +85,19 @@ phpmob_settings:
 
 ```
 
+## Ownered settings
+Configuration for owner (user) aware settings. Controller used `PhpMobSettingsBundle:Update:userUpdate`.
+
+```yaml
+phpmob_settings:
+    schemas:
+        section1:
+            owner_aware: true
+            label: Section1
+            settings:
+                key1: ~
+```
+
 ## Updater Routing
 See example routing in `src/Resources/config/routing.xml` or you can customize with:
 ```yaml
@@ -102,12 +115,16 @@ your_route_name:
 Getter setting
 ```twig
 {{ settings_get('section.key') }}
+
+{# owner aware setting #}
 {{ settings_get('section.key', app.user) }}
 ```
 
 Setter setting
 ```twig
 {{ settings_set('section.key', 'value') }}
+
+{# owner aware setting #}
 {{ settings_set('section.key', 'value', app.user) }}
 ```
 

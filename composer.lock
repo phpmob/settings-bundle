@@ -411,16 +411,16 @@
         },
         {
             "name": "phpmob/settings",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmob/settings.git",
-                "reference": "04b63e03dfd90ae3c8c410b711aa620a169edbb0"
+                "reference": "1cbff4aae8d2831f2525b6d4020c5504b72c9088"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmob/settings/zipball/04b63e03dfd90ae3c8c410b711aa620a169edbb0",
-                "reference": "04b63e03dfd90ae3c8c410b711aa620a169edbb0",
+                "url": "https://api.github.com/repos/phpmob/settings/zipball/1cbff4aae8d2831f2525b6d4020c5504b72c9088",
+                "reference": "1cbff4aae8d2831f2525b6d4020c5504b72c9088",
                 "shasum": ""
             },
             "require": {
@@ -429,7 +429,6 @@
             },
             "require-dev": {
                 "cache/filesystem-adapter": "^1.0",
-                "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^5.6",
                 "sylius-labs/coding-standard": "^1.0",
                 "symfony/form": "^3.3",
@@ -466,7 +465,7 @@
                 "Settings",
                 "php"
             ],
-            "time": "2017-12-26T12:51:32+00:00"
+            "time": "2018-01-15T11:02:59+00:00"
         },
         {
             "name": "psr/cache",
