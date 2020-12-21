@@ -4,8 +4,9 @@ namespace tests\PhpMob\SettingsBundle;
 
 use PhpMob\SettingsBundle\DependencyInjection\PhpMobSettingsExtension;
 use PhpMob\SettingsBundle\PhpMobSettingsBundle;
+use PHPUnit\Framework\TestCase;
 
-class PhpMobSettingsBundleTest extends \PHPUnit_Framework_TestCase
+class PhpMobSettingsBundleTest extends TestCase
 {
     /**
      * @test

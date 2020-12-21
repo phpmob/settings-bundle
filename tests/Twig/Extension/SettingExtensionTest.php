@@ -5,6 +5,7 @@ namespace tests\PhpMob\SettingsBundle\Twig\Extension;
 use PhpMob\SettingsBundle\Twig\Extension\SettingExtension;
 use PhpMob\SettingsBundle\Twig\Helper\SettingHelper;
 use PHPUnit\Framework\TestCase;
+use Twig\TwigFunction;
 
 class SettingExtensionTest extends TestCase
 {
@@ -16,7 +17,7 @@ class SettingExtensionTest extends TestCase
 
         $twig = new SettingExtension($helper);
 
-        $this->assertInstanceOf('\Twig_SimpleFunction', $twig->getFunctions()[0]);
+        $this->assertInstanceOf(TwigFunction::class, $twig->getFunctions()[0]);
     }
 
     public function testGet()
@@ -34,22 +35,5 @@ class SettingExtensionTest extends TestCase
         $twig = new SettingExtension($helper);
 
         $this->assertEquals('bar', $twig->get('section.foo'));
-    }
-
-    public function testSet()
-    {
-        $helper = $this->getMockBuilder(SettingHelper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $helper
-            ->expects(self::any())
-            ->method('set')
-            ->willReturn(null)
-        ;
-
-        $twig = new SettingExtension($helper);
-
-        $this->assertEquals(null, $twig->set('section.foo', 'bar'));
     }
 }

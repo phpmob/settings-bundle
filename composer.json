@@ -1,5 +1,5 @@
 {
-    "name": "phpmob/settings-bundle",
+    "name": "phakpoom/settings-bundle",
     "description": "Just a Symfony settings bundle.",
     "type": "symfony-bundle",
     "keywords": [
@@ -7,13 +7,16 @@
         "settings",
         "settings-bundle"
     ],
-    "homepage": "https://github.com/phpmob/settings-bundle",
+    "homepage": "https://github.com/phakpoom/settings-bundle",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
         {
             "name": "Ishmael Doss",
             "email": "nukboon@gmail.com"
+        },
+        {
+            "name": "Bonn"
         }
     ],
     "autoload": {
@@ -28,18 +31,18 @@
         }
     },
     "require": {
-        "php": "^7.1",
+        "php": ">=7.4",
         "phpmob/settings": "^1.2",
-        "symfony/form": "^3.3|^4.0",
-        "symfony/framework-bundle": "^3.3|^4.0",
-        "symfony/templating": "^3.3|^4.0",
-        "twig/twig": "^2.0"
+        "symfony/form": "^3.4|^4.4|^5.0",
+        "symfony/framework-bundle": "^3.4|^4.4|^5.0",
+        "symfony/templating": "^3.4|^4.4|^5.0",
+        "twig/twig": "^2.0|^3.0"
     },
     "require-dev": {
         "cache/filesystem-adapter": "^1.0",
-        "phpspec/phpspec": "^4.0",
-        "phpunit/phpunit": "^5.6",
-        "sylius-labs/coding-standard": "^1.0"
+        "phpspec/phpspec": "^7.0",
+        "phpunit/phpunit": "^8.0",
+        "sylius-labs/coding-standard": "^3.0"
     },
     "config": {
         "sort-packages": true,

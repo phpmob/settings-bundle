@@ -14,11 +14,13 @@ declare(strict_types=1);
 namespace PhpMob\SettingsBundle\Twig\Extension;
 
 use PhpMob\SettingsBundle\Twig\Helper\SettingHelper;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
  * @author Ishmael Doss <nukboon@gmail.com>
  */
-class SettingExtension extends \Twig_Extension
+class SettingExtension extends AbstractExtension
 {
     /**
      * @var SettingHelper
@@ -39,8 +41,8 @@ class SettingExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('settings_get', [$this, 'get']),
-            new \Twig_SimpleFunction('settings_set', [$this, 'set']),
+            new TwigFunction('settings_get', [$this, 'get']),
+            new TwigFunction('settings_set', [$this, 'set']),
         ];
     }
 
