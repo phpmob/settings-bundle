@@ -1,7 +1,7 @@
 language: php
 
 php:
-  - '7.1'
+  - '7.4'
   - nightly
 
 branches:
@@ -26,13 +26,13 @@ services: ~
 matrix:
   fast_finish: true
   include:
-    - php: '7.1'
+    - php: '7.4'
       env:
         - COVERAGE="true"
         - PHPUNIT_FLAGS="--stop-on-failure --verbose --coverage-text --coverage-clover=coverage.xml"
   allow_failures:
     - php: nightly
-    - php: '7.2'
+    - php: '7.4'
 
 before_install:
   - set -eo pipefail
